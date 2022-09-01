@@ -76,7 +76,7 @@ userSchema.methods.generateToken = function(cb){
   user.save(function(err, user){
     if(err) return cb(err);
     cb(null, user);
-  });ß
+  });
 };
 
 userSchema.statics.findByToken = function(token, cb){

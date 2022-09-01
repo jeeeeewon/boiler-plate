@@ -27,7 +27,7 @@ mongoose.connect(config.mongoURI, {
 
 app.get('/', (req, res) => res.send(`Hello world!`));
 
-app.post('api/users/register', (req, res) => {
+app.post('/api/users/register', (req, res) => {
   //정보들을 db에 넣기전에 암호화시켜주어야함.(User.js에서 pre('save', func)로 코딩)
   //회원가입시 필요한 정보들을 client에서 가져오면 그것들을 데이터베이스에 넣어준다.
   const user = new User(req.body);
@@ -38,7 +38,7 @@ app.post('api/users/register', (req, res) => {
   });
 });
 
-app.post('api/users/login', (req, res) => {
+app.post('/api/users/login', (req, res) => {
   //요청된 이메일을 데이터베이스에서 찾기
   User.findOne({email: req.body.email}, (err, user) => {
     if(!user){
