@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const PORT = 3000;
+const PORT = 5000;
 
 const {User} = require('./models/User');
 const {auth} = require('./middleware/auth');
@@ -26,6 +26,11 @@ mongoose.connect(config.mongoURI, {
 
 
 app.get('/', (req, res) => res.send(`Hello world!`));
+
+app.get('/api/hello', (req, res) => {
+  res.send('안녕하세요')
+});
+
 
 app.post('/api/users/register', (req, res) => {
   //정보들을 db에 넣기전에 암호화시켜주어야함.(User.js에서 pre('save', func)로 코딩)
