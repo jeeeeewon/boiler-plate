@@ -5,7 +5,8 @@ import LandingPage from "./views/LandingPage/LandingPage.js";
 import LoginPage from "./views/LoginPage/LoginPage.js";
 import RegisterPage from "./views/RegisterPage/RegisterPage.js";
 import NavBar from "./views/NavBar/NavBar";
-import Footer from "./views/Footer/Footer"
+import Footer from "./views/Footer/Footer";
+import VideoUploadPage from "./views/VideoUploadPage/VideoUploadPage";
 
 //null   Anyone Can go inside
 //true   only logged in user can go inside
@@ -20,6 +21,8 @@ function App() {
           <Route exact path="/" element= {<LandingPage />} />
           <Route exact path="/login" element={<LoginPage />} />
           <Route exact path="/register" element={<RegisterPage />} />
+          <Route exact path="/video/upload" element={<VideoUploadPage />} />
+          <Route exact path="/video/:videoId" element={<VideoDetailPage />} />
         </Routes>
       </div>
       <Footer />

@@ -5,6 +5,7 @@ import axios from 'axios';
 import { USER_SERVER } from '../../../Config';
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { UploadOutlined } from "@ant-design/icons";
 
 function RightMenu(props) {
   const user = useSelector(state => state.user)
@@ -47,6 +48,10 @@ function RightMenu(props) {
   } else {
 
     const items = [
+      {
+        label: <a href="/video/upload">< UploadOutlined /></a>,
+        key: "upload"
+      },
       {
         label: <a onClick={logoutHandler}>Logout</a>,
         key: "logout"

@@ -91,7 +91,7 @@ function RegisterPage(props) {
         const {
           values,
           touched,
-          errors,
+          errors, 
           dirty,
           isSubmitting,
           handleChange,
